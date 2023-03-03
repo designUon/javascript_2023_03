@@ -93,7 +93,15 @@
         
         let num3 = 100500;
 
-        // if(num3 >= 100000){
+        if(num3 >= 100000){
+            document.write(`<p>할인금액 : ${num3 - 0.2*num3}원</p>`);
+        }else if(num3 >= 50000){
+            document.write(`<p>할인금액 : ${num3 - 0.1*num3}원</p>`);
+        }else{
+            document.write(`<p>할인금액 : ${num3 - 0.05*num3}원</p>`);
+        }
+
+                // if(num3 >= 100000){
         //     document.write("20% 할인");
         // }else if(num3 >= 50000){
         //     document.write("10% 할인");
@@ -108,14 +116,6 @@
         // }else{
         //     document.write(num3-num3*0.05+"원");
         // }
-
-        if(num3 >= 100000){
-            document.write(`<p>할인금액 : ${num3 - 0.2*num3}원</p>`);
-        }else if(num3 >= 50000){
-            document.write(`<p>할인금액 : ${num3 - 0.1*num3}원</p>`);
-        }else{
-            document.write(`<p>할인금액 : ${num3 - 0.05*num3}원</p>`);
-        }
     </script>
 </body>
 </html>
