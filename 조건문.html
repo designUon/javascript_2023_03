@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+</head>
+<body>
+    <script>
+        // 조건문 : 조건에 따라서 문장이 달라진다
+        // 순서도를 통해
+
+        // 참(true)만 있는 if문
+        if(true){
+            console.log("이 조건문은 참입니다");
+            document.write("<h1>이 조건문은 참입니다</h1>");
+        }
+        document.write("<p>if문에 상관없이 실행되는 내용입니다</p>")
+
+        // 조건문에서 조건식이 중요하다
+        // 조건식 : 계산 결과 boolean 값으로 출력
+
+        let num = "문자";  // 변수에 값을 저장해서 확인
+
+        if(isNaN(num)){
+            document.write("<p>"+"값이 NaN입니다"+"</p>")
+        }
+
+        // 1. 문제 안에 조건문을 사용하는지 확인 (~라면)
+        // 2. 조건식 확인 (비교, 참거짓 확인)
+        // 3. 참일때, 실행할 문장 찾기
+        // let score = 60;
+        let score = prompt();
+
+        if(score >= 60){
+            document.write(
+                "<p>"+"합격입니다"+"</p>"
+            )
+        }else{
+            document.write(
+                "<p>"+"불합격입니다"+"</p>"
+            )
+        }
+
+
+        document.write("<hr>");
+        document.write("<h1>if-else 중첩 조건문</h1>");
+
+        // 조건이 여러개가 있을 때 if문 안에 if문을 사용할 수 있다
+        // 첫번째 조건 : 지하철이 파업했다
+        // 두번째 조건 : 버스가 파업했다
+        let subwayWalkout = false; // 지하철 파업했음
+        let busWalkout = true; // 버스 파업했음
+
+        if(subwayWalkout){
+            // 지하철파업 true
+            if(busWalkout){
+                // 버스파업 true
+                document.write("<p>택시를 탄다</p>");
+            }else{
+                // 버스파업 false
+                document.write("<p>버스를 탄다</p>");
+            }
+        }else{
+            // 지하철파업 false
+            document.write("<p>지하철을 탄다</p>");
+        }
+
+        document.write("<hr>");
+        document.write("<h1>if-else if 조건문</h1>");
+
+        // if-else if 조건문
+        // 1.지하철파업 => 버스파업 => 택시
+        // if-else if => 참인 조건을 먼저 실행
+        //  => 지하철 파업X =>지하철 탑승
+        // 지하철 파업O => 버스 파업X => 버스 탑승
+        // 지하철 파업O => 버스 파업O => 택시 탑승
+        if(subwayWalkout == true){
+            document.write("<p>지하철을 탄다</p>");
+        // }else if(busWalkout == false){
+        }else if(!busWalkout){
+            document.write("<p>버스를 탄다</p>");
+        }else{
+            document.write("<p>택시를 탄다</p>");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수실습3</title>
+</head>
+<body>
+    <h1>점수 결과입니다</h1>
+    <h2 id="score"></h2>
+    <script>
+        // prompt 창 출력
+        let scoreInput = prompt("점수를 입력해주세요");
+
+        // 60이상이면 true, 60이하면 false 출력
+        let result = scoreInput >= 60;
+
+        // 스코어값 도큐먼트 출력
+        document.getElementById("score").innerHTML=`${result}`;
+
+        
+    </script>
+</body>
+</html>

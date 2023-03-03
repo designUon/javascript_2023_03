@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수 실습</title>
+</head>
+<body>
+    <!-- 값을 출력할 html 태그가 필요 -->
+    <h1 id="welcome">님 오신 것을 환영합니다.</h1>
+    <p>홈페이지에 방문하신 것을 환영합니다.</p>
+    
+    <!-- 자바스크립트 공간 -->
+    <script>
+        // prompt 값을 입력받음
+        let nickname = prompt("닉네임을 입력해주세요");
+        
+        // 입력받은 값은 h1태그 id를 찾아서 출력
+        // 태그를 찾아줄때는 getElementById 사용하기
+        document.getElementById("welcome").innerHTML=`${nickname}님 오신 그린것을 환영합니다.`;
+
+        // 태그를 찾기위해서 querySelector  사용가능
+        // CSS의 선택자를 통해서 찾을 수 있다
+        // id="welcome"의 형제인 p태그 찾기
+        document.querySelector("#welcome+p").innerHTML="querySelector를 이용"
+    </script>
+</body>
+</html>

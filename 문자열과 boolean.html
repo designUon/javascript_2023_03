@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열과 boolean</title>
+</head>
+<body>
+    <!-- 자바스크립트 작성 공간 -->
+    <script>
+        // 계산식만 작성하면 저장도 출력도 되지않는다
+        1+3;
+        // 작성한 내용을 볼때는 console.log()를 통해 확인
+        // 브라우저(클라이언트쪽)에서 확인
+        console.log(1+3);
+        // alert(1+3);
+
+        // 문자열은 한 라인에 작성 할 수 있다
+        console.log("hi\nhi");
+        `52+273=${52+273}`
+
+        console.log('반갑습니다'+'홍길동입니다')
+        console.log('반갑습니다\n  홍길동입니다')
+        console.log(`100*273+23=${100*273+23}`)
+
+
+        // boolean 불
+        console.log(3 != 3);
+        // 3 != 3 결과 : false
+        
+        console.log(3+2 == 5);
+        // 3+2 ==5 결과 : true
+
+        // != 같지않다를 볼때는 왼쪽 오른쪽의 값을 보고
+        // 기호가 맞는지 아닌지를 판단해서 결과보기
+        // 3과 5 >> 쓸 수 있는 기호 : 같다 / 같지않다
+
+        // boolean값 계산 - 논리연산자 사용가능
+        
+        // ! => boolean값을 반대로 출력
+        console.log(!true); //출력결과 : false
+
+        // ||(or) => 두개의 값 중에 하나라도 true가 있으면 결과는 true
+        console.log(false||true);
+        
+        // &&(and) => 두개의 값 중에 전부 true여야만 결과가 true
+        console.log(true && true);
+
+        // 비교/논리연산자를 사용해서 결과값이 true가 나올 수 있는 표현식 3개 실습
+        console.log(true || false)
+        console.log(true && true)
+        console.log(true != false)
+
+        //"안녕" "hi" 를 비교했을때 true가 나오도록 실습
+        console.log('안녕' != 'hi')
+
+        // true와 false 값을 논리연산자로 계산했을 때 결과가 true로 출력이 되려면 어떤 연산자를 쓰는지 실습
+        console.log(true || false)
+ 
+    </script>
+</body>
+</html>

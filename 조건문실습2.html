@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문실습2</title>
+</head>
+<body>
+    <h1>미세먼지 판별하기</h1>
+    <!-- <div id="colorBox" style="width:300px; height:50px; border: 1px solid black;">미세먼지</div> -->
+    <script>
+        let dust = 30;
+        if(dust <= 30){
+            document.write("<h1>미세먼지 좋음</h1>");
+        }else if(dust <= 80){
+            document.write("<h1>미세먼지 보통</h1>");
+        }else if(dust <= 150){
+            document.write("<h1>미세먼지 나쁨</h1>");
+        }else{
+            document.write("<h1>미세먼지 매우나쁨</h1>");  
+        }
+        // if(dust <= 30){
+        //     document.getElementById("colorBox").style{backgroundColor="green"};
+        // }else if(dust <= 80){
+        //     document.getElementById("colorBox").style{backgroundColor="blue"};
+        // }else if(dust <= 150){
+        //     document.getElementById("colorBox").style{backgroundColor="yellow"};
+        // }else{
+        //     document.getElementById("colorBox").style{backgroundColor="gray"};  
+        // }
+
+        // 조건문 연습
+        // 변수 : mathScore
+        // 조건식 : 참
+        // 90점이상 => A
+        // 80점이상 => B
+        // 70점이상 => C
+        // 이하의 점수 => F
+
+        let mathScore = 90;
+
+        if(mathScore >= 90){
+            document.write("<h2>A</h2>");
+        }else if(mathScore >= 80){
+            document.write("<h2>B</h2>");
+        }else if(mathScore >= 70){
+            document.write("<h2>C</h2>");
+        }else{
+            document.write("<h2>F</h2>");
+        }
+
+
+        // 두 값의 범위가 둘다 참일때 출력 => &&
+        if(mathScore >= 90){
+            document.write("<h2>A</h2>");
+        }
+        if(mathScore >= 80 && mathScore < 90){
+            document.write("<h2>B</h2>");
+        }
+        if(mathScore >= 70 && mathScore < 80){
+            document.write("<h2>C</h2>");
+        }
+        if(mathScore >= 69 && mathScore > 0){
+            document.write("<h2>F</h2>");
+        }
+
+
+        document.write("<hr>");
+        document.write("<h1>조건문 연습 - 홀수짝수</h1>");
+        
+        let num1 = 2;
+
+        if(num1%2 == 0){
+            document.write("<p>짝수</p>");
+        }else{
+            document.write("<p>홀수</p>");
+        }
+
+        document.write("<hr>");
+        document.write("<h1>조건문 연습 - 음수양수</h1>");
+
+        let num2 = 10;
+
+        if(num2 >= 0){
+            document.write("양수");
+        }else{
+            document.write("음수");
+        }
+
+        document.write("<hr>");
+        document.write("<h1>조건문 연습 - 할인율</h1>");
+        
+        let num3 = 100500;
+
+        // if(num3 >= 100000){
+        //     document.write("20% 할인");
+        // }else if(num3 >= 50000){
+        //     document.write("10% 할인");
+        // }else{
+        //     document.write("5% 할인");
+        // }
+
+        // if(num3 >= 100000){
+        //     document.write(num3-num3*0.2+"원");
+        // }else if(num3 >= 50000){
+        //     document.write(num3-num3*0.1+"원");
+        // }else{
+        //     document.write(num3-num3*0.05+"원");
+        // }
+
+        if(num3 >= 100000){
+            document.write(`<p>할인금액 : ${num3 - 0.2*num3}원</p>`);
+        }else if(num3 >= 50000){
+            document.write(`<p>할인금액 : ${num3 - 0.1*num3}원</p>`);
+        }else{
+            document.write(`<p>할인금액 : ${num3 - 0.05*num3}원</p>`);
+        }
+    </script>
+</body>
+</html>

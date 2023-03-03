@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수실습2</title>
+</head>
+<body>
+    <h1 id="currentAge"></h1>
+
+    <script>
+        // prompt 출력
+        let birth = prompt("현재 생년을 입력해주세요", "2022");
+
+        // 나이 계산 => 현재년도와 태어난 년도를 계산
+        // prompt로 받아온 값은 문자열, 계산할때 주의
+        let age = 2023 - birth +1;
+        // console.log(age);
+
+        // document 출력
+        document.getElementById("currentAge").innerHTML=`현재 나이는 ${age
+        }세입니다`
+
+        // console.log로 isNaN 출력
+        console.log( isNaN(age) );
+
+    </script>
+</body>
+</html>

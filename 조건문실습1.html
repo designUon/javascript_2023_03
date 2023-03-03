@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문실습</title>
+</head>
+<body>
+    <script>
+        // 조건이 bool값일때, let check=true;
+        // let check = prompt();
+        let check = "의자";
+        // 참이면 document "확인하였습니다" 출력
+        if(check){
+            document.write("의자를 입력했나요?<br>");
+        }
+
+
+        // 조건이 bool표현식일때, 맞는 단어를 입력하면 "맞습니다" 출력
+        let word = "의자";
+
+        if(word === check){
+           document.write("<h1>맞습니다</h1>");
+        }else{
+            document.write("<h1>틀렸습니다</h1>");
+        }
+
+        document.write("<hr>");
+        document.write("<h1>if-else</h1>");
+
+        // if-else 조건문
+        // 참일때의 내용과 거짓일때의 내용을 다르게 작성할 때 사용
+        // let switchOn = true;
+
+        // if(switchOn){
+        //     document.write("<p>스위치가 켜졌습니다</p>");읮
+        // }else{
+        //     document.write("<p>스위치가 꺼졌습니다</p>");
+        // }
+
+
+        let word2 = "의자";
+
+        if(word2 != "의자"){
+            document.write("<p>기호를 맞게 썼다</p>");
+        }else{
+            document.write("<p>기호를 맞지않게 썼다</p>");
+        }        
+
+        // 문자열로 조건식 작성(==)
+        // word = "의자"; , 같지않을때 아니다 출력
+
+        document.write("<hr>");
+        document.write("<h1>if-else 조건문 실습</h1>");
+
+        // let money = 1200;
+        let money = prompt();
+
+        if(money >= 1500){
+            document.write("버스를 타고 갑니다");
+        }else{
+            document.write("돈이 모자라 걸어갑니다");
+        }
+
+        document.write("<br>");
+
+
+        let isCard = true;
+
+        if(isCard){
+            document.write("버스를 타고갑니다"); //true값
+        }else{
+            document.write("걸어갑니다"); //false값
+        }
+
+
+        
+    </script>
+</body>
+</html>
