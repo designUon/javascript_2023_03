@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼항연산자</title>
+</head>
+<body>
+    <script>
+        // 단항 => 하나의 변수에서 쓸 수 있는 연산자 / ++. --
+        // 삼항 => 세개의 값을 이용해서 쓸 수 있는 연산자
+
+        // if문은 조건식에 따라 {}안의 내용이 실행
+
+        // 삼항연산자 => 조건식과 참일 때과 거짓일 때의 값을 이용 계산식
+        // 연산자이기 때문에 계산하고 그 결과를 출력
+
+        true ? "참입니다" : "거짓"; // => 3+1; 동일
+        // 변수에 값을 담아서 사용하거나 console에 출력
+        let result = false ? "참입니다" : "거짓입니다";
+        // document.write(result);
+
+        let money = 1000;
+        console.log( money >= 1500 ? "버스를 탈 수 있다" : (1500-money) + "원 부족, 버스를 탈 수 없다");
+
+        // 삼항연산자 연습
+        // 나이가 19세 이상이면 성인입니다 / 19세 미만이면 학생입니다
+
+        let age = 20;
+        document.write(age >= 19 ? "성인입니다" : "학생입니다");
+
+        let age2 = 20;
+        let resultAge = (age2 >= 19) ? "성인입니다" : "학생입니다";
+        document.write(`<p>${resultAge}</p>`);
+
+        // 삼항연산자 활용
+        // 변수 초기화
+        let name = null;
+        // let name = prompt("이름을 적어주세요");
+        name = name ? name : "이름이 없습니다";
+        document.write(`<p>이름은 ${name}입니다</>`);
+        
+        document.write("<hr><h3>삼항연산자 실습</h3>");
+
+        let a = 10;
+        let b = 11;
+        
+        let max = (a > b) ? "a가 더 큽니다" : "b가 더 큽니다";
+
+        document.write(max);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 기초테스트</title>
+</head>
+<body>
+    <script>
+        document.write("<h2>문제1.</h2><h3>10과 20 중 큰 수를 출력하는 조건문출력</h3>")
+        //1) 10과 20 중 큰 수를 출력하는 조건문을 만드세요 
+        //(단, 10과 20은 변수 두어 비교한다)
+        let A = 10;
+        let B = 20;
+        if(A>B){
+            document.write(A);
+        }else{
+            document.write(B);
+        }
+
+        document.write("<h2>문제2.</h2><h3>대출가능한 책 계산 조건문출력</h3>")
+        // 대출받은 책이 3권일 때, 대출받은 책이 5권 미만면 책을 빌릴수 있다는 말과 함께
+        // 현재 빌릴수 있는 권수를 알려주고, 5권이 이상이면 대출받을수 있는 책을 다 받았습니다
+        // 라는 말을 출력하세요.
+        let borrow = 5;
+        let book = 4;
+
+        if(book < borrow){
+            document.write(`책을 빌릴 수 있습니다<br>현재 ${borrow - book}권을 빌릴 수 있습니다.<br>`)
+        }else{
+            document.write("대출 가능한 권수를 다 받았습니다<br>")
+        }
+
+        
+        document.write("<h2>문제3.</h2><h3>점수가 65일 때, 70이상은 합격, 60이상은 보충수업 60미만은 재수강</h3>")
+        // 점수가 65일 때, 70이상은 합격, 60이상은 보충수업 60미만은 재수강이라 출력하는 조건문
+
+        let score = 65;
+
+        if(score>=70){
+            document.write("합격");
+        }else if(score>=60){
+            document.write("보충수업");
+        }else{
+            documnet.write("재수강");
+        }
+
+        // switch(score){
+            
+        //     case (score >= 70) :
+        //     document.write("합격");
+        //     break;
+
+        //     case (score >= 60) :
+        //     document.write("보충수업");
+        //     break;
+
+        //     case (score < 60) :
+        //     document.write("재수강");
+        // }
+
+        document.write("<br><hr>");
+        document.write("<h2>switch문</h2><h3>1~12값을 넣었을 때, 각 달의 일수를 출력하는 swich문</h3>")
+
+        let month = 12;
+
+        switch(month){
+
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12: 
+                document.write("31일")
+            break;
+
+            // case 1 :
+            //     document.write("31일")
+            // break;
+
+            // case 3 :
+            //     document.write("31일")
+            // break;
+
+            // case 5 :
+            //     document.write("31일")
+            // break;
+
+            // case 7 :
+            //     document.write("31일")
+            // break;
+
+            // case 8 :
+            //     document.write("31일")
+            // break;
+
+            // case 10 :
+            //     document.write("31일")
+            // break;
+
+            // case 12 :
+            //     document.write("31일")
+            // break;
+
+            // case 4,6,9,11 :
+            //     document.write("30일")
+            // break;
+
+            case 4: case 6: case 9: case 11:
+                document.write("30일")
+            break;
+
+            // case 4 :
+            //     document.write("30일")
+            // break;
+
+            // case 6 :
+            //     document.write("30일")
+            // break;
+
+            // case 9 :
+            //     document.write("30일")
+            // break;
+
+            // case 11 :
+            //     document.write("30일")
+            // break;
+
+
+            case 2 :
+                document.write("28일")
+            break;
+
+            default :
+                document.write("12 이하의 숫자를 입력해주세요")
+        }
+
+        // 스위치문 대신에 if-else if를 사용했을 경우
+        // 1월~12월값을 입력했을 때 그 일수를 출력
+
+        let monthNum = 9;
+
+        // 출력해야할 결과가 동일할때는 논리연산자 (||, &&를 이용해서 조건식을 계산 가능)
+        // || => 두개의 조건식 중에서 하나가 참일때 실행
+        // && => 두개의 조건식이 전부 참일때 실행
+        if(monthNum == 1 || monthNum == 3 || monthNum == 5 || monthNum == 7 || monthNum == 8 || monthNum == 10 || monthNum == 12){
+            document.write("<p>31일</p>")
+        }else if(monthNum == 2){
+            document.write("<p>28일</p>")
+        }else if(monthNum == 4 || 6 || 9 || 11){
+            document.write("<p>30일</p>")
+        }
+
+
+    </script>
+</body>
+</html>
