@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        document.write("<h3>정답 오답</h3>");
+
+
+        // prompt 창 안뜨게하려고 "20" 값 임의로 넣어둠
+        let answer = "20";
+        // let answer = "10+10?";
+        
+        while(answer !== "20"){
+            answer = prompt("틀렸습니다, 10+10?");
+        }
+        document.write("정답입니다<br>");
+
+
+
+        document.write("<hr>");
+
+
+        document.write("<h3>입력받은 숫자의 합 계산하기</h3>");
+
+        let numInput = "";
+        let sumInput = 0;
+
+        
+        while(numInput !== "0"){
+            if(isNaN(numInput)==false){
+                sumInput += Number(numInput);
+            }
+            numInput = prompt("입력하는 숫자를 더해줍니다. (종료:0)");
+        }
+        
+        document.write(`총합계는 ${sumInput}`)
+        
+        // document.write(`<p>${inputNum}</p>`);
+        
+        // 0이 입력될때까지 입력받는 숫자를 더하고 => while문
+
+        // while(numInput != "0"){
+        //     numInput = prompt("숫자 0을 입력해주세요");
+        //     sumInput += Number(numInput);
+        // }
+
+        // // 종료 후 출력 / 숫자가 아닌 경우에는 더하지 않는다 => if
+        // // => 숫자라면 더한다 isNaN(숫자) => true
+        // // => !isNaN(숫자)=!false => true
+
+        // // document.write(`입력하신 숫자의 합은 ${sumInput}입니다`);
+
+        // if(isNaN(sumInput)==false){
+        //     document.write(`입력하신 숫자의 합은 ${sumInput}입니다`);
+        // }else{
+        //     document.write(`숫자를 입력하지않았습니다`);
+        // }
+
+        
+    </script>
+</body>
+</html>

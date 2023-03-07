@@ -17,7 +17,27 @@
         margin-bottom: 30px;
         margin-right: 10px;
         float: left;
-}
+        }
+
+    #gugu2{
+        float: left;
+        padding: 20px;
+        display: block;
+    }
+
+    h2, hr{
+        clear: both;
+    }
+
+    b{
+        color: blueviolet;
+    }
+
+    footer{
+        width: 100%;
+        height: 100vh;
+    }
+
 </style>
 <body>
     <script>
@@ -151,6 +171,9 @@
 
 
 
+        
+        
+        
         document.write("<h3><br><hr><br>배열 안의 값을 수정할 수 없음<br></h3>");
 
 
@@ -165,6 +188,8 @@
 
 
 
+
+
         document.write("<h3><br><hr><br>배열 안의 값을 수정할 수 있음<br></h3>");
 
         for(let i in students){
@@ -175,9 +200,150 @@
         document.write(`<p>${students}</p>`);
 
 
-        document.write("<br><br><br><br><br><br>");
-        document.write("<br><br><br><br><br><br>");
 
+
+
+        document.write("<h3><br><hr><br>반복문과 조건문 실습</h3>");
+
+        // 1~100까지 짝수만 출력하세요
+        document.write("<h4><br>1~100까지 짝수만 출력<br></h4>");
+
+        for(i=1; i<=100; i++){
+            if(i % 2 == 0){
+                document.write(` ${i} `);
+            }
+        }
+
+        document.write(` <hr> `);
+
+        // =>> if문을 쓰지않고 증감식의 값을 바꿔서 출력
+        for(let i=2; i<=100; i+=2){
+            document.write(` ${i} `);
+        }
+
+
+
+
+        
+        // 1~50까지 7의 배수만 출력하세요
+        document.write("<h4><br>1~50까지 7의 배수만 출력<br></h4>");
+
+        for(i=1; i<=50; i++){
+            if(i % 7 == 0){
+                document.write(` ${i} `);
+            }
+        }
+
+        document.write(` <hr> `);
+
+        // =>> if문을 쓰지않고 증감식의 값을 바꿔서 출력
+        for(let i=7; i<=50; i+=7){
+            document.write(` ${i} `);
+        }
+
+
+
+        // 구구단 2~9단까지 출력하세요
+        document.write("<h4><br>구구단 2~9단 출력<br></h4>");
+
+
+        for(let i=2; i<=9; i++){
+            document.write(`<div id=gugu2>`);
+            // document.write(i);
+            document.write(`<h3>${i}단</h3>`);
+            for(let j=1; j<=9; j++){
+                // document.write(j);
+                document.write(`${i} X ${j} = ${i*j} <br>`);
+            }
+            document.write(`</div>`);
+        }
+
+
+        document.write(` <hr> `);
+
+        document.write("<h2><br>for문 연습<br></h2>");
+
+        document.write("<h4>점수 평균값 구하기<br></h4>");
+        let score2 = [60, 70, 80, 90, 40, 70, 70];
+        let scoreSum = 0; 
+        // ${score2[i]}의 총 합계 / score2.length => 평균값 sum
+        for(let i=0; i<score2.length; i++){
+            document.write(`${score2[i]} `);
+            // scoreSum = scoreSum + score2[i];
+            scoreSum += score2[i];
+        }
+        
+        document.write(`<br>`);
+        // 모두 더한 합을 얻고싶다면 for문이 끝난 후에 사용
+        document.write(`<b>총합계는 ${scoreSum}입니다</b>`);
+        
+        document.write(`<br>`);
+        document.write(`<b>총합계의 평균값은 ${scoreSum/score2.length}입니다</b><br><br>`);
+
+        // document.write(`<br>${score2.length}`);
+
+
+
+
+        document.write(` <hr> `);
+
+        document.write("<h4>1~100까지 홀수만 모두 더한 값구하기<br></h4>");
+        let oddSum = 0;
+        // 홀수값 구하기
+        for(i=1; i<=100; i++){
+            if(i%2 == 1){
+                document.write(`${i} `);
+                // 조건문의 참값이 홀수이기 때문에 i는 모두 홀수
+                oddSum += i;
+            }
+        }
+
+        document.write(`<br>`);
+        document.write(`<b>홀수의 총 합은 ${oddSum}입니다</b><br><br>`);
+
+
+
+        document.write(` <hr> `);
+
+        document.write("<h4>1~100까지 3의 배수와 5의 배수의 합 구하기 : if<br></h4>");
+        let baeSum = 0;
+
+        for(i=1; i<=100; i++){
+            
+            if((i%3 == 0) || (i%5 == 0)){
+                document.write(`${i} `);
+                // 조건문의 참값이 3과 5의 배수이기 때문에 i는 모두 3과 5의 배수
+                baeSum += i;
+            }
+        }
+
+        document.write(`<br>`);
+        document.write(`<b>3과 5의 배수 총 합은 ${baeSum}입니다</b>`);
+
+
+        document.write(`<br><br>`);
+
+        document.write("<h4>1~100까지 3의 배수와 5의 배수의 합 구하기 : else if<br></h4>");
+        let baeSum2 = 0;
+
+        for(i=1; i<=100; i++){
+            
+            if(i%3 == 0){
+                document.write(`${i} `);
+                baeSum2 += i;
+            }else if(i%5 == 0){
+                document.write(`${i} `);
+                baeSum2 += i;
+            }
+        }
+
+        document.write(`<br>`);
+        document.write(`<b>3과 5의 배수 총 합은 ${baeSum2}입니다</b>`);
+
+
+
+
+        document.write("<footer></footer>");
 
     </script>
 </body>
