@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수표현식 실습</title>
+</head>
+<body>
+    <script>
+        
+        // let sub = function(num1, num2){
+        //     let result;
+        //     result = num1 - num2;
+        //     return result;
+        // }
+
+        let sub = function(num1, num2){
+            return num1-num2;
+        }
+
+        document.write(sub(5,10));
+
+
+        document.write("<h3>홀수짝수 구분하는 함수표현식</h3>");
+        // 숫자를 넣었을 때 홀수인지 짝수인지 알려주는 함수표현식
+        // let oddEvenCheck
+        // oddEvenCheck(3) => return "홀수";
+        // oddEvenCheck(6) => return "짝수";
+
+        // let oddEvenCheck = function(num){
+        //     if(num%2 == 0){
+        //         document.write(`<p>${num}은 짝수입니다</p>`);
+        //     }else{
+        //         document.write(`<p>${num}은 홀수입니다</p>`);
+        //     }
+        //     return num; 
+        // }
+
+        // oddEvenCheck(3);
+        // oddEvenCheck(6);
+        // oddEvenCheck(11);
+        // oddEvenCheck(1232249501837984);
+
+        document.write("<b>if를 사용한 함수표현식</b><br>");
+
+        let oddEvenCheck = function(num){
+            if(num%2 == 0){
+                // return을 만나면 함수를 빠져나옴
+                return "짝수입니다"
+            }else{
+                return "홀수입니다"
+            }
+        }
+
+        document.write(oddEvenCheck(3));
+
+        document.write("<hr>");
+
+        
+        // 삼항연산자를 사용한 홀수짝수
+        document.write("<b>삼항연산자를 사용한 함수표현식</b><br>");
+
+        let oddEvenCheckOper = function(num){
+            return num%2 == 0 ? "짝수" : "홀수";
+        }
+
+        document.write(oddEvenCheck(142353452));
+
+
+    </script>
+</body>
+</html>
