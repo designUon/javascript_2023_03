@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체확인</title>
+</head>
+<body>
+    <script>
+        // 객체 : 속성값(변수)과 메소드(함수)를 가지고 있는 자료형(변수에 저장해서 사용)
+        // document의 자료형 => 객체(=object)
+        document.write(typeof(document));
+
+        // 객체 생성 후 변수에 할당(자료형이기 때문에 그 값을 사용하기 위해)
+        let puppy = {
+            // 속성
+            name : "초코",
+            // 메소드
+            eat : function(){
+                document.write(`<p> ${this.name}가 밥을 먹습니다</p>`);
+
+            }
+        };
+        // puppy => 변수 / { } => 객체
+        // 방법1) 객체명.속성명
+        document.write(`<p>${puppy.name}</p>`);
+        // 방법2) 객체명["속성명"]
+        document.write(`<p>${puppy["name"]}</p>`);
+        // =>> 방법1,2 동일하게 출력됨
+
+        // document.write(`<p>${puppy.eat()}</p>`); => return값이 없기때문에 undefined값도 출력됨
+        puppy.eat();
+
+
+        ////////////////////////////////////////////////////////
+
+        document.write("<hr>");
+        // document.write("<h3>객체확인 실습1</h3>");
+
+        let person = {
+            name : "홍길동",
+            address : "부산",
+            intro : function(){
+                // console.log(`${person.name}입니다. ${person.address}에 거주중입니다`);
+                // return `${person.name}입니다. ${person.address}에 거주중입니다`;
+                return `${this.name}입니다. ${this.address}에 거주중입니다`;
+            }
+        };
+
+        // console.log(person.intro()); => return값이 없기때문에 undefined값도 출력됨
+        // person.intro();
+        console.log(person.intro()); // => return값을 넣으면 undefined값 안뜨고 제대로 출력됨
+
+        ///////////////////////////////////////////////////////////
+
+        // document.write("<h3>객체확인 실습2</h3>");
+
+        let myCookie = {
+            shape : "원",
+            flavor : "초코",
+            intro : function(){
+                // console.log(`${myCookie.shape}모양의 ${myCookie.flavor}맛입니다`);
+                // console.log(`${this.shape}모양의 ${this.flavor}맛입니다`);
+                return `${this.shape}모양의 ${this.flavor}맛입니다`;
+                // this는 자기자신의 객체를 가져온다.
+            },
+            count : function(number){
+                return `${number}개 있습니다`;
+            }
+        };
+
+        myCookie.intro();
+        // console.log(myCookie.intro());
+
+
+
+        ///////////////////////////////////////////////////////////////////
+
+        // 생성자 함수 => 값을 받아와서 객체를 만드는 함수
+        // 생성자함수는 구분을 위해 첫글자를 대문자로
+
+        // function Dog(color, name, age){
+        function Dog(color, name){
+            
+            // 객체의 속성만 할당해줌
+            this.color = color;
+            this.name = name;
+
+            // this.age = age;
+            // 원하는 값을 직접 할당 할 수 있다
+            this.age = 0;
+
+            // 메소드 작성
+            this.eat = function(){
+                return `${this.name}이는 사료를 잘 먹습니다`
+            }
+
+        }
+
+        let dog1 = new Dog("white","솜","1");
+        let dog2 = new Dog("black","콩","5");
+
+        // 없는 속성에 접근해도 오류가 발생하지않고 undefined를 출력
+        console.log(dog1.family);
+        dog1.family = "진돗개";
+        // 없는 속성에 값을 넣어주면 그 값이 할당되어 사용할 수 있다
+
+        console.log(dog1.family);
+
+
+        ///////////////////////////////////////////////////////////////////
+
+        // 객체 안의 속성, 메소드 반복
+        // for ... in
+        for(let i in puppy){
+            document.write(
+                "<p>"+i+":"+puppy[i]+"</p>"
+            );
+        }
+
+    
+    </script>
+</body>
+</html>
