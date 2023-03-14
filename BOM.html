@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM</title>
+</head>
+<body>
+    <script>
+        // BOM => Browser Object Model (브라우저 객체 모델)
+        // 브라우저(인터넷창)에 접근하여서 자바스크립트로 제어하기 위한 모델
+        // 가장 상위 객체 : window > 접두사를 제외하고 사용
+        // 가장 상위 객체 => window, 현재 script의 객체가 window이므로 => this로 접근가능
+        // document도 window안에 속한 객체
+
+        // console 에 this 입력 => Window
+        // console 에 console.dir(document) 입력
+
+        // location 객체
+        // 현재 웹페이지에 대한 정보를 가지고 있다
+        // .reload()를 사용하면 페이지가 새로고침이 된다
+        document.write(`<p>${location.href}</p>`) // 현재 페이지 주소가 출력
+
+        // history 객체 => history 정보 저장
+        // length 히스토리 갯수 확인가능
+        // history.back() = history.go(-1)
+        // history.forward() = history.go(1)
+        
+        // 대화상자 => window객체에서 제공해주는 메서드
+        // let choice = confirm("선택을 해주세요");
+        // document.write(`<p>${choice}</p>`); // 확인 : true, 취소 : false가 출력됨
+
+
+        /////////////////////////////////////////////////////////////////////////////
+        // BOM객체 실습
+        
+        // let naviPlat = confirm("운영체제를 알려드릴까요?");
+        // // if(naviPlat == true){
+        // if(naviPlat){
+        //     document.write(`<p>${navigator.platform}입니다</p>`);
+        // }
+
+        // 함수와 메소드를 사용할 때 return값을 다시 함수의 인수값으로 넣어 사용가능
+        // 함수 안에 실행함수를 호출해서 사용가능
+        // 변수에 담지않고 바로 return값 사용가능
+
+        // 아래처럼 변경해도 동일하게 출력이 됨
+        if(confirm("운영체제를 알려드릴까요?")){
+            document.write(`<p>${navigator.platform}입니다</p>`);
+        }
+        
+    </script>
+</body>
+</html>
