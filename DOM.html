@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM</title>
+    <link rel="stylesheet" href="./css/0315 style.css">
 </head>
 <body>
     <h1 id="title">DOM</h1>
@@ -33,6 +34,11 @@
         <li>요소</li>
         텍스트
     </ul>
+
+
+    <!-- /////////////////// 클래스 추가 제거 /////////////////////-->
+    <h2 class="blue_color">클래스가 추가되면 파란색이 됩니다</h2>
+
 
     <script>
         // DOM Document Object Model  문서 객체 모델
@@ -73,8 +79,8 @@
         classElement.style.color = "red";
         classElement.style.fontWeight = "900";
 
-        title.innerHTML = "아이디를 들고와서 수정된 내용입니다";
-        title.innerHTML = "아이디를 들고와서 다시 수정된 내용입니다";
+        // title.innerHTML = "아이디를 들고와서 수정된 내용입니다";
+        // title.innerHTML = "아이디를 들고와서 다시 수정된 내용입니다";
 
         // list>li.innerHTML = "요소들을 한 번에 수정한 내용입니다";
         let listLi = document.querySelectorAll("#list>li");
@@ -146,6 +152,142 @@
         console.log("요소찾기", child.nextElementSibling);
 
 
+        ////////////////////////////////////////////////////////////////////
+        // Node 실습1
+
+        // h1태그의 childNode의 nodeValue => DOM
+        let h1 = document.querySelector("h1");
+        console.log(h1.childNodes[0].nodeValue);
+
+        // li태그의 parentNode와 nextElementSibling => <hr>
+        let li = document.querySelector("li");
+        console.log(li.parentNode.nextElementSibling);
+
+        // ul태그의 firstChild와 nextSibling => <li></li>
+        let ul = document.querySelector("ul");
+        console.log(ul.firstChild.nextSibling);
+
+        ////////////////////////////////////////////////////////////////////
+        // Node 관리 생성과 추가
+
+        let element2 = document.createElement("h2");
+
+        // 속성과 텍스트 생성
+        let attr = document.createAttribute("style");
+        let text = document.createTextNode("h2태그생성");
+        // 속성 추가
+        element2.setAttributeNode(attr);
+
+        // 글자 추가 => textNode이므로 appendChild를 통해서 추가
+        element2.appendChild(text);
+
+        // body에 추가
+        let body = document.querySelector("body");
+        body.appendChild(element2);
+
+        // 속성과 태그 안 텍스트의 경우 DOM 속성에 접근해서 값을 바꿀 수 있다
+        element2.style.color="blue";
+        // 텍스트를 변경하는 방법은 여러가지가 있다
+        element2.innerHTML = "값 변경";
+        element2.textContent = "값 수정";
+
+        // 동일한 객체를 다른 곳에 추가
+        ul.appendChild(element2);
+        // body에 들어간 element2가 ul로 이동
+        // 동일한 객체는 html문서에서 한 개 사용 가능
+
+        // 동일한 객체를 여러번 html문서에 사용하고싶을 때 노드를 복제해서 사용
+        // 객체(배열)을 동일한 새로운 객체로 만들 때 메소드사용
+        let element3 = element2.cloneNode(true);
+        // cloneNode(true) => 안쪽 내용까지 다 들고 올건지 여부
+        body.appendChild(element3);
+        element3.innerHTML = "요소3"
+
+
+        // Node의 삭제
+        // ul태그의 첫번째 li 삭제 => return값으로 DOM을 돌려줌
+        // 삭제 후 다시 생성할 예정이라면 removeChild 추천!
+        ul.removeChild(ul.firstElementChild);
+        // ul 태그의 첫번째 자식으로 들어가서 자기자신 삭제 => return값이 없음
+        ul.firstElementChild.remove();
+
+
+        ////////////////////////////////////////////////////////////////////
+        // Node 관리 실습1
+
+        // 생성
+        let p = document.createElement("p");
+        // 내용 추가
+        // pTag = document.createTextNode("P태그 생성");
+        let textNode = document.createTextNode("textnode를 이용한 텍스트입니다");
+
+        // body에 출력
+        body.appendChild(p);
+
+        p.appendChild(textNode);
+        
+        // 동일한 내용을 사용하려면 복제
+        // body.appendChild(textNode); // body로 옮겨지면서 컬러가 사라짐
+
+        p.style.color="blue";
+        
+        // p.textContent = "<span>textNode</span>의 nodeValue접근하여 수정"
+        // textNode.nodeValue = "<span>textNode</span>의 nodeValue접근하여 수정";
+        textNode.innerHTML = "<span>textNode</span>의 nodeValue접근하여 수정";
+
+        // innerHTML과 textNode의 차이
+        // innerHTML은 그 안에 태그를 작성하면 태그를 반영해서 사용된다
+
+        // textNode는 그 안에 들어가는 내용은 모두 글자로 들어간다
+        // textContent도 동일하게 모두 글자로 들어감
+
+
+        //////////////////////////////////////////////////////////////////////
+
+        // Node 실습2
+
+        // p태그의 스타일 삭제
+        p.removeAttribute("style");
+
+        // ul 태그의 첫번째 li 삭제
+        ul.removeChild(ul.firstElementChild);
+
+        // ul 삭제
+        ul.remove();
+
+
+
+        //////////////////////////////////////////////////////////////////////
+
+        // Node 실습3
+
+        // p.appendChild(h1.cloneNode(true));
+        let h1Copy = h1.cloneNode(true);
+        body.appendChild(h1Copy);
+
+        let h2Copy = h1.cloneNode(true);
+        body.appendChild(h2Copy);
+        
+        // 변수로 넣어서 추가하면, 변수를 통해 제어 가능
+        h1Copy.removeAttribute("style");
+        h2Copy.innerHTML = "DOM copy2";
+        
+        // let p2 = p.cloneNode(true);
+        // body.appendChild(p2);
+
+        // 복제한 요소를 바로 추가
+        body.appendChild(p.cloneNode(true));
+        // 변수에 할당하지않고 추가하면 자바스크립트에서 제어할 수 없다
+        // 다시 document.querySelector를 통해 가져와서 제어할 수 있다
+
+
+        // DOM객체 속성 중 classlist 각 요소의 클래스를 추가 제거 가능
+
+        let h2 = document.querySelector(".blue_color");
+        h2.classList.remove("blue_color"); // 클래스 삭제
+        h2.classList.add("blue_color","hi","hello"); // 클래스 추가
+        // (,)쉼표로 클래스 여러개 추가 가능
+        h2.classList.toggle("blue_color"); // 토글
 
 
     </script>

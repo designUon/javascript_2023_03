@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- <style>
+    h1{
+        list-style: circle;
+    }
+</style> -->
+<body>
+    <h1>수정하기 전 제목입니다</h1>
+    <div>
+        <ul>
+            <li>첫번째 내용입니다</li>
+            <li>두번째 내용입니다</li>
+            <li>세번째 내용입니다</li>
+            <li>네번째 내용입니다</li>
+        </ul>
+        <ol>
+            <li>첫번째 내용입니다</li>
+            <li>두번째 내용입니다</li>
+            <li>세번째 내용입니다</li>
+            <li>네번째 내용입니다</li>
+        </ol>
+    </div>
+    <div class="main">
+        <p><span>빈 공간</span> 입니다</p>
+    </div>
+    <div class="footer">
+        <p>푸터영역입니다</p>
+    </div>
+
+    <script>
+        
+        let h1 = document.querySelector("h1");
+        h1.style.backgroundColor = "lightgray";
+        h1.style.color = "blue";
+        h1.innerHTML = "DOM 이용한 수정";
+
+        
+        
+        
+        let ul = document.querySelector("ul");
+        // ul.removeChild(ul.firstElementChild);  = 아래와 동일한 방법
+        ul.firstElementChild.remove();
+
+        // let ulLi = document.querySelector("ul li");
+        // let liAdd = document.createTextNode("새로 추가한 노드요소입니다");
+        // ulLi.appendChild(liAdd);
+        let li = document.createElement("li");
+        li.innerHTML = "새로 추가한 노드요소입니다";
+        ul.appendChild(li);
+
+        
+        
+        
+        let ol = document.querySelector("ol");
+        // ol.children[1].remove(); // 첫번째 자식요소 삭제
+        // ol.firstElementChild.nextElementSibling.remove(); // 첫번째 자식요소의 형제요소 삭제
+        ol.removeChild(ol.firstElementChild);
+        ol.removeChild(ol.lastElementChild);
+        // childNodes / children[1]
+
+
+        // let olFirst = document.querySelector("ol>li:nth-child(1)")
+        // olFirst.innerHTML = "내용을 바꾸었습니다";
+        ol.firstElementChild.innerHTML = "내용을 바꾸었습니다";
+
+        
+        let span = document.querySelector(".main span");
+
+        span.style.color = "red";
+
+
+        // let p = document.querySelector(".main p");
+        let p = span.parentNode;
+
+        // 동일한 내용을 수정잆이 복제할 경우
+        // 변수에 넣지않고 작성가능
+        let main = document.querySelector(".main");
+        // main.append(p.cloneNode(true));
+        // main.append(p.cloneNode(true));
+        // 2번 복사 => for문으로 변경
+        for(i=0; i<2; i++){
+            main.append(p.cloneNode(true));
+        }
+
+        // p.appendChild(p.cloneNode(true));
+
+        // let p2 = p.cloneNode(true);
+        // p.appendChild(p2);
+
+
+
+        
+
+
+    </script>
+
+</body>
+</html>

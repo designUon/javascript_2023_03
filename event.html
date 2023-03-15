@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript EVENT</title>
+</head>
+<body>
+    <!-- HTML 태그에서 어떤 이벤트가 발생 -->
+    <!-- onclick : 태그를 클릭했을 때 실행 -->
+    <h1 onclick="printConsole('h1')">이벤트</h1>
+    <button onclick="alert('클릭했습니다')">CLICK</button>
+    <p onmouseenter="printConsole('p')">마우스를 올리세요</p>
+
+
+    <!-- ////////////////////////////////////////////////////////////////////// -->
+
+    <p>값을 넣어주세요</p>
+    <!-- <input id="input" type="text" value="" size="10" placeholder="값 입력" disabled> -->
+    <input id="input" type="text" value="" size="15" placeholder="값 입력">
+    <button onclick="textInput()">확인</button>
+    <p id="textprint"></p>
+
+
+    <script>
+        // HTML태그에서 이벤트가 발생했을 때 실행 할 내용 작성
+        // 함수로 만들어서 onclick 이벤트에 전달
+        function printConsole(tag){
+            console.log(tag + "를 눌렀습니다");
+        }
+
+
+        ////////////////////////////////////////////////////////////////////////
+
+
+        let p = document.querySelector("#textprint"); //p태그 아무값
+        let input = document.querySelector("#input"); // input태그
+        
+        function textInput(){
+            p.innerHTML = input.value;
+        }
+
+        // p태그의 글자색 바꾸기
+        // 속성값에 직접 접근하여 바꿀때는 = 으로 할당
+        p.style.color = "blue";
+
+        // p태그의 이전 형제태그(button)에 접근해서 button의 style.color를 red로 바꿔보기
+        // p.previousElementSibling.style.color="red";
+
+        // 속성에 있는 값을 가져올 수 있다
+        console.log(p.style.color);
+
+        let button = p.previousElementSibling;
+        // button.style.borderRadius = "10px";
+        // button.style.border = "1px solid black";
+        // button.style.backgroundColor = "yellow";
+
+        // 버튼 클릭했을 때
+        // 버튼의 글자 색이 검정이라면 빨강
+        // 이때, 글자 색이 빨강이라면 검정으로
+        if(button.style.color == "red"){
+            button.style.color = "";
+        }else{
+            button.style.color = "red";
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>
