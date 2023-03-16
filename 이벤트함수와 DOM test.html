@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="light">
+
+    <button id="btn2" onclick="printTest()">버튼을 클릭하면 버튼안의 글자가 바뀝니다</button>
+
+    <p id="p1" onmouseenter="changeColor()">마우스를 올리면 글자가 빨간색으로 바뀝니다</p>
+    <p id="p2" onmouseleave="changeColor2()">마우스가 빠져나가면 글자가 파란색으로 바뀝니다</p>
+    <p id="p3" onmouseenter="changeColor()" onmouseleave="changeColor2()">마우스가 올리면 빨간색, 빠져나가면 파란색으로 바뀝니다</p>
+
+    <h1 id="title" class="title">HTML태그와 DOM 객체</h1>
+    <img class="image" src="" alt="새이미지">
+    <form action="" id="form">
+        <a href="#" target=""_blank>이미지</a>
+        <br>
+
+        <p>이름입력</p>
+        <input type="text" id="input" required>
+        <br>
+        <input type="radio" name="gender" id="radio1" value="female"><span>여성</span>
+        <input type="radio" name="gender" id="radio2" value="male"><span>남성</span>
+        <br>
+
+        <p>좋아하는 과일 중복선택</p>
+        <input type="checkbox" id="checkbox1" name="fruit" value="apple" checked><span>사과</span>
+        <input type="checkbox" id="checkbox2" name="fruit" value="orange"><span>오렌지</span>
+        <input type="checkbox" id="checkbox3" name="fruit" value="strawberry"><span>딸기</span>
+        <input type="checkbox" id="checkbox4" name="fruit" value="peach"><span>복숭아</span>
+        <br>
+        
+        <input type="text" id="date" min="2023-03-16" value="1">
+        <br>
+
+        <input type="submit" id="submit" value="제출">
+
+    </form>
+
+
+    <script>
+        
+        function printTest(){
+            let btn2 = document.querySelector("#btn2");
+            btn2.innerHTML = "안녕하세요";
+        }
+
+        function changeColor(){
+            let p1 = document.querySelector("#p1");
+            let p3 = document.querySelector("#p3");
+            p1.style.color = "red";
+            p3.style.color = "red";
+        }
+
+        function changeColor2(){
+            let p2 = document.querySelector("#p2");
+            let p3 = document.querySelector("#p3");
+            p2.style.color = "blue";
+            p3.style.color = "blue";
+        }
+
+    </script>
+</body>
+</html>
