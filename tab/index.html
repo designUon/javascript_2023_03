@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab</title>
+    <link rel="stylesheet" href="tab.css">
+</head>
+<body>
+    <!-- 탭을 작성하기 위한 html 뼈대 -->
+    <div class="tab_menu">
+        <!-- 작성하고 싶은 탭 수 li -->
+        <ul class="list">
+
+            <li class="on">
+                <!-- 접근할 버튼(a) -->
+                <div id="btn_box1" class="btn_box"><a href="#" class="btn">Tab Button1</a></div>
+                <!-- 버튼을 클릭했을 때 보여질 공간 -->
+                <div id="tab1" class="content block">Tab Content1</div>
+            </li>
+
+            <li>
+                <div id="btn_box2" class="btn_box"><a href="#" class="btn">Tab Button2</a></div>
+                <div id="tab2" class="content">Tab Content2</div>
+            </li>
+
+            <li>
+                <div id="btn_box3" class="btn_box"><a href="#" class="btn">Tab Button3</a></div>
+                <div id="tab3" class="content">Tab Content3</div>
+            </li>
+
+        </ul>
+    </div>
+    <script src="tab2.js"></script>
+</body>
+</html>
