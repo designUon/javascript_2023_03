@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.box{
+    height: 200px;
+    background-color: lightyellow;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.box-small{
+    height: 100px;
+    width: 50%;
+    background-color: lightblue;
+}
+
+.relative{
+    position: relative;
+}
+
+.absolute{
+    position: absolute;
+    /* width: 100px;
+    height: 100px; */
+    top: 0;
+    background-color: bisque;
+}
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>local Storage</title>
+</head>
+<body>
+    <h1>로컬스토리지</h1>
+    <p>브라우저 안에 값을 저장하는 공간</p>
+    <p>개발자도구 > 애플리케이션 > 저장공간 > 로컬스토리지 확인</p>
+    <script>
+
+        // localStorage 객체에 접근해서 사용
+        // key에 value값 작성
+        localStorage.setItem("key", "value");
+        localStorage.setItem("keya", "valueya");
+        localStorage.setItem("number", 1);
+
+        // key를 통해서 값 가져오기 => 항상 문자열로 가져옴
+        console.log(localStorage.getItem("key"));
+        console.log(localStorage.getItem("keya"));
+        console.log(localStorage.getItem("one"));
+        console.log(typeof localStorage.getItem("number"));
+
+        // key를 통해 값 삭제하기
+        localStorage.removeItem("key");
+
+        // key에 들어간 값을 자료형을 살려서 사용하기
+        let num = Number(localStorage.getItem("number"));
+        console.log(num);
+
+        // key에 객체를 넣어서 사용하기
+        // 객체는 문자열로 반환되지않기에 바꿔서 넣어줘야한다
+        let objectString = JSON.stringify({id:1, array:[1,2,3]});
+
+        // JSON.stringify를 이용해서 문자열로 작성가능
+        localStorage.setItem("object", objectString);
+        console.log(localStorage.getItem("object"));
+
+        // 문자열로 가져옴
+        // 문자열을 객체로 바꿔서 사용
+        let object = JSON.parse(localStorage.getItem("object"));
+        console.log(object);
+
+    </script>
+</body>
+</html>
